@@ -40,11 +40,11 @@ public class ResourceProducer : MonoBehaviour
     public void CollectResources(IResourceManager resourceManager)
     {
         resourceManager.AddResource(_resourceId, _currentAmount);
-        OnAmountUpdated?.Invoke(_currentAmount);
     }
     
     public void SetСollectedResources()
     {
          _currentAmount = 0;
+         OnAmountUpdated?.Invoke(_currentAmount);
     }
 }

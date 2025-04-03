@@ -61,12 +61,13 @@ public class CharacterInteraction : MonoBehaviour
         }
         if(_targetProducer.Amount>0)
         {
-           _targetProducer.CollectResources(_resourceManager);
-           _popupPresenter.ShowPopup(_targetProducer.ResourceId,_targetProducer.Amount, _resourceManager.GetResourceCount(_targetProducer.ResourceId));
-           SoundManager.Instance.PlayEffect();
-           _targetProducer.SetСollectedResources();
+            SoundManager.Instance.PlayEffect();
             
-           _targetProducer = null;
+            _targetProducer.CollectResources(_resourceManager);           
+            _popupPresenter.ShowPopup(_targetProducer.ResourceId,_targetProducer.Amount, _resourceManager.GetResourceCount(_targetProducer.ResourceId));
+           
+            _targetProducer.SetСollectedResources();            
+            _targetProducer = null;
         }
         else
         {
